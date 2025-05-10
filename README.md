@@ -110,6 +110,9 @@ Available load balancing algorithms:
 
 - **+50** There is horizontal scaling for application with a **load balancer** ✅
 
+Since my local machine having 10 cores, 9 parallism workers initiated
+
+
 
 
 
