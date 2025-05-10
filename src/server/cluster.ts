@@ -23,7 +23,7 @@ let workersData: Record<number, WorkerInfo> = {};
 // --- END MODIFIED PART ---
 
 // Choose a load balancing algorithm: 'round-robin', 'ip-hash', 'least-connections'
-const loadBalancingAlgorithm = process.env.LOAD_BALANCING_ALGORITHM || 'ip-hash'; // Default to round-robin
+const loadBalancingAlgorithm = process.env.LOAD_BALANCING_ALGORITHM || 'round-robin'; // Default to round-robin
 
 let nextWorkerIndexForRoundRobin = 0; // For round-robin
 
