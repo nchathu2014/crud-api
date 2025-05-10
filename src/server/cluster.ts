@@ -23,7 +23,7 @@ let workersData: Record<number, WorkerInfo> = {};
 // --- END MODIFIED PART ---
 
 // Choose a load balancing algorithm: 'round-robin', 'ip-hash', 'least-connections'
-const loadBalancingAlgorithm = process.env.LOAD_BALANCING_ALGORITHM || 'round-robin'; // Default to round-robin
+const loadBalancingAlgorithm = process.env.LOAD_BALANCING_ALGORITHM || 'ip-hash'; // Default to round-robin
 
 let nextWorkerIndexForRoundRobin = 0; // For round-robin
 
@@ -227,14 +227,3 @@ const forwardRequest = (req: IncomingMessage, res: ServerResponse, targetPort: n
 
   req.pipe(proxyReq, { end: true });
 };
-
-// Ensure this file is only run when --cluster flag is present or in production
-// This logic might be in your main index.ts
-// if (process.argv.includes('--cluster') || process.env.NODE_ENV === 'production') {
-//   startCluster();
-// } else {
-//   // Fallback to single server mode if not clustering
-//   const port = Number(process.env.PORT) || 4000;
-//   createServer(port);
-//   console.log(`Server running in single mode on port ${port}`);
-// }

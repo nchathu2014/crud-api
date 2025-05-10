@@ -70,8 +70,7 @@ npm run start:multi
 
 This starts multiple worker processes (one per CPU core minus 1) with a load balancer that distributes requests using the selected algorithm (configured in `.env`).
 
-![image](https://github.com/user-attachments/assets/f7223834-049b-47be-814f-b9559efacd93)
-
+![alt text](image.png)
 
 Available load balancing algorithms:
 - `round-robin` - Distributes requests sequentially across workers
@@ -99,6 +98,7 @@ Available load balancing algorithms:
 ## Hacker Scope
 - **+30** There are tests for API (not less than **3** scenarios) ⁉️
 - **+50** There is horizontal scaling for application with a **load balancer** ✅
+
 
 
 
