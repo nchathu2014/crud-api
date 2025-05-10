@@ -4,7 +4,7 @@ import { ApiError } from '../server/error-handler';
 import { registerRoute } from '../server/routes';
 import { validateCreateUserDto, validateUpdateUserDto } from './../models/user.model';
 import { userDb } from '../database/dbuser';
-import { MESSAGES } from '../../src/messages/user.messages';
+import { MESSAGES } from '../messages/user.messages'; 
 
 
 // GET /api/users - Get all users
