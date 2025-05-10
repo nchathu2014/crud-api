@@ -96,7 +96,9 @@ Available load balancing algorithms:
 - **+10** Production mode: `npm` script `start:prod` implemented properly ⁉️
 
 ## Hacker Scope
-- **+30** There are tests for API (not less than **3** scenarios) ⁉️
+- **+30** There are tests for API (not less than **3** scenarios) ✅
+<img width="708" alt="image" src="https://github.com/user-attachments/assets/46e1cbe4-7e7d-493a-a752-7869ba47772d" />
+
 - **+50** There is horizontal scaling for application with a **load balancer** ✅
 
 
