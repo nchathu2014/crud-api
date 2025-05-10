@@ -48,10 +48,17 @@ interface User {
 
 ## Available Scripts
 
-- `npm start` - Start the server in development mode
+- `npm start:dev` or `npm start`  - Start the server in development mode
 - `npm run start:multi` - Start with horizontal scaling (cluster mode)
 - `npm run test` - Test nornmal
 - `npm run test:coverage` - Test with coverage
+- `npm run start:prod` - Run the production mode
+
+## Special Note for Runs the Production Mode
+If you facing any error  like up and running the production mode, Please follow the steps below,
+- `npm run clean`
+- `npm run build`
+- `npm run start:prod`
 
 ## Development
 
@@ -95,7 +102,7 @@ Available load balancing algorithms:
 - **+10** Processing of requests to non-existing endpoints implemented properly ✅
 - **+10** Errors on the server side that occur during the processing of a request should be handled and processed properly ✅
 - **+10** Development mode: `npm` script `start:dev` implemented properly ✅
-- **+10** Production mode: `npm` script `start:prod` implemented properly ⁉️
+- **+10** Production mode: `npm` script `start:prod` implemented properly ✅
 
 ## Hacker Scope
 - **+30** There are tests for API (not less than **3** scenarios) ✅
