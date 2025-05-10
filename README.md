@@ -68,25 +68,10 @@ npm run start:multi
 
 This starts multiple worker processes (one per CPU core minus 1) with a load balancer that distributes requests using the selected algorithm (configured in `.env`).
 
+![image](https://github.com/user-attachments/assets/f7223834-049b-47be-814f-b9559efacd93)
+
+
 Available load balancing algorithms:
 - `round-robin` - Distributes requests sequentially across workers
 - `ip-hash` - Routes requests from the same IP to the same worker (best for session consistency)
 - `least-connections` - Routes to the worker with the fewest active connections
-
-## Testing
-
-Run tests with:
-
-```
-npm test
-```
-
-For test coverage report:
-
-```
-npm run test:coverage
-```
-
-## License
-
-ISC
