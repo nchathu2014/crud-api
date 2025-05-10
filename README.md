@@ -50,6 +50,8 @@ interface User {
 
 - `npm start` - Start the server in development mode
 - `npm run start:multi` - Start with horizontal scaling (cluster mode)
+- `npm run test` - Test nornmal
+- `npm run test:coverage` - Test with coverage
 
 ## Development
 
