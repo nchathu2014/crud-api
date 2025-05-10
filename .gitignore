@@ -1,0 +1,87 @@
+# Compiled output
+/dist
+/build
+/out
+
+# Dependencies
+/node_modules
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Testing
+/coverage
+/.nyc_output
+/test-report
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IDE - JetBrains
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+
+# IDE - Others
+*.sublime-workspace
+*.sublime-project
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Webpack
+/.webpack
+/webpack-stats.json
+
+# Temporary files
+/tmp
+/temp
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional: Production bundle
+/bundle.js
+
+# Optional: Build tools
+.grunt/
+.lock-wscript
+bower_components/

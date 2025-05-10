@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    /* Base Options */
+    "target": "ES2022",          /* Set a higher target for Node.js 22.x.x */
+    "module": "CommonJS",        /* Specify module code generation */
+    "lib": ["ES2022"],           /* Specify library files to be included */
+    
+    /* Strict Type-Checking Options */
+    "strict": true,              /* Enable all strict type-checking options */
+    "noImplicitAny": true,       /* Raise error on expressions with an implied 'any' type */
+    "strictNullChecks": true,    /* Enable strict null checks */
+    
+    /* Module Resolution Options */
+    "moduleResolution": "node",  /* Specify module resolution strategy */
+    "esModuleInterop": true,     /* Enables emit interoperability between CommonJS and ES Modules */
+    "resolveJsonModule": true,   /* Include modules imported with .json extension */
+    
+    /* Emit Options */
+    "outDir": "./dist",          /* Redirect output to the directory */
+    "rootDir": "./src",          /* Specify the root directory of input files */
+    "sourceMap": true,           /* Generates corresponding .map files */
+    "removeComments": true,      /* Do not emit comments to output */
+    
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true,  /* Ensure consistent file names */
+    "skipLibCheck": true,                      /* Skip type checking of declaration files */
+    "baseUrl": ".",              /* Base directory to resolve non-relative module names */
+    "paths": {                   /* A series of entries which re-map imports to lookup locations */
+      "*": ["node_modules/*"]
+    }
+  },
+  "include": ["src/**/*"],       /* Specify the files to include */
+  "exclude": ["node_modules", "**/*.test.ts", "dist"],  /* Exclude files or directories */
+  "ts-node": {
+    "transpileOnly": true        /* Improves performance for ts-node */
+  }
+}

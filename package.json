@@ -1,0 +1,55 @@
+{
+  "name": "crud-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+ "scripts": {
+    "start": "npm run start:dev",
+    "start:dev": "nodemon --exec ts-node src/index.ts",
+    "start:prod": "cross-env NODE_ENV=production npm run build && node dist/index.js",
+    "start:multi": "ts-node src/index.ts --cluster",
+    "build": "tsc -p tsconfig.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint \"src/**/*.ts\"",
+    "lint:fix": "eslint \"src/**/*.ts\" --fix",
+    "clean": "node -e \"const fs = require('fs'); try { fs.rmSync('./dist', { recursive: true, force: true }); console.log('Dist folder cleaned'); } catch(e) { console.log(e.message); }\"",
+    "rebuild": "npm run clean && npm run build",
+    "webpack": "webpack --config webpack.config.js",
+    "prepare-test": "cross-env NODE_ENV=test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nchathu2014/crud-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nchathu2014/crud-api/issues"
+  },
+  "homepage": "https://github.com/nchathu2014/crud-api#readme",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.5.0",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.17",
+    "@types/uuid": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.32.0",
+    "@typescript-eslint/parser": "^8.32.0",
+    "eslint": "^9.26.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.5.3",
+    "ts-jest": "^29.3.2",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.8",
+    "webpack-cli": "^6.0.1"
+  }
+}
