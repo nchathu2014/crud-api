@@ -43,7 +43,7 @@ interface User {
    ```
    npm install
    ```
-3. Environment variables steup (!IMPORTANT)
+3. Environment variables steup (!IMPORTANT) ‼️
    - Rename the .env.sample to .env and add your expected port and load balancing algorithm (default is ip-hash)
 
 ## Available Scripts
