@@ -1,22 +1,29 @@
-
 import { createServer } from './server/server';
+import { startCluster } from './server/cluster';
 import { config } from 'dotenv';
+import { registerUserRoutes } from './controllers/user.controller';
 
-// Load environment variables
 config();
 
-// Determine if we should run in cluster mode
+const registerRoutes = (): void => {
+  registerUserRoutes();
+};
+
+//when cluster mode running
 const isClusterMode = process.argv.includes('--cluster');
 
-function initializeApp(): void {
+const initializeApp = (): void => {
+  registerRoutes();
+  
   // Start the appropriate server mode
   if (isClusterMode) {
     console.log('Starting server in cluster mode...');
+    startCluster();
   } else {
-    const port = Number(process.env.PORT) || 5000;
+    const port = Number(process.env.PORT) || 4000;
     console.log(`Starting single-instance server on port ${port}...`);
     createServer(port);
   }
-}
+};
 
 initializeApp();

@@ -1,11 +1,13 @@
 import http, { IncomingMessage, ServerResponse } from 'http';
+import { parseUrl, sendJson } from './helpers';
+import { handleError, ApiError } from './error-handler';
+import { handleRoutes } from './routes';
 import { config } from 'dotenv';
 
-// Load environment variables
 config();
 
-
-export function createServer(port: number = Number(process.env.PORT)): http.Server {
+// Create HTTP server
+export const createServer = (port: number = Number(process.env.PORT) || 4000): http.Server => {
   const server = http.createServer(async (req: IncomingMessage, res: ServerResponse) => {
     try {
       // Set CORS headers for development
@@ -19,10 +21,17 @@ export function createServer(port: number = Number(process.env.PORT)): http.Serv
         res.end();
         return;
       }
-     
+      
+      // Pass to route handler
+      const handled = await handleRoutes(req, res);
+      
+      // If no route handled the request, it's a 404
+      if (!handled) {
+        const { path } = parseUrl(req);
+        throw ApiError.notFound(`Cannot ${req.method} ${path}`);
+      }
     } catch (error) {
-      console.error('Error handling request:', error);
-      res.writeHead(500, { 'Content-Type': 'application/json' });
+      handleError(error as Error, res);
     }
   });
 
