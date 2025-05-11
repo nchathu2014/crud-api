@@ -112,6 +112,9 @@ Available load balancing algorithms:
 
 Since my local machine having 10 cores, 9 parallism workers initiated
 
+<img width="477" alt="image" src="https://github.com/user-attachments/assets/34ade6d6-ef4b-4a92-8fe2-d19dab0e3e2f" />
+
+
 
 
 
