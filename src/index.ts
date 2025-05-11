@@ -17,7 +17,6 @@ const initializeApp = (): void => {
   
   // Start the appropriate server mode
   if (isClusterMode) {
-    console.log('Starting server in cluster mode...');
     startCluster();
   } else {
     const port = Number(process.env.PORT) || 4000;

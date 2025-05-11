@@ -1,5 +1,4 @@
-import http from 'http';
-import { v4 as uuidv4 } from 'uuid';
+import http from 'node:http';
 import { createServer } from '../src/server/server';
 import { registerUserRoutes } from '../src/controllers/user.controller';
 
@@ -35,8 +34,7 @@ const request = (options: any, body?: any): Promise<{ statusCode: number; body: 
 
 describe('CRUD API Tests', () => {
   let server: http.Server;
-  const testPort = 4001;
-  const baseUrl = `http://localhost:${testPort}`;
+  const testPort = process.env.TEST_PORT ? parseInt(process.env.TEST_PORT, 10) : 5000;
   let createdUserId: string;
 
   beforeAll(() => {

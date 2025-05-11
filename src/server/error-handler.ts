@@ -1,4 +1,4 @@
-import { ServerResponse } from 'http';
+import { ServerResponse } from 'node:http';
 import { sendJson } from './helpers';
 
 export enum ErrorType {

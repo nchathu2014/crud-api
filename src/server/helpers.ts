@@ -1,4 +1,4 @@
-import { IncomingMessage, ServerResponse } from 'http';
+import { IncomingMessage, ServerResponse } from 'node:http';
 import { validate as uuidValidate } from 'uuid';
 
 // Parse URL to get path and query params

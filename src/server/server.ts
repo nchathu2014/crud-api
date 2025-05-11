@@ -1,5 +1,5 @@
-import http, { IncomingMessage, ServerResponse } from 'http';
-import { parseUrl, sendJson } from './helpers';
+import http, { IncomingMessage, ServerResponse } from 'node:http';
+import { parseUrl } from './helpers';
 import { handleError, ApiError } from './error-handler';
 import { handleRoutes } from './routes';
 import { config } from 'dotenv';

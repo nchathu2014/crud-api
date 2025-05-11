@@ -1,6 +1,6 @@
 import { MESSAGES } from '../messages/user.messages';
 
-// Validating Create User Dtos
+// Validation functions
 export function validateCreateUserDto(data: any): string | null {
   if (!data) {
     return MESSAGES.COMMON.REQUIRED_REQUEST_BODY;
