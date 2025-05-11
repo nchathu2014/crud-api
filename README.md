@@ -114,6 +114,25 @@ Since my local machine having 10 cores, 9 parallism workers initiated
 
 <img width="477" alt="image" src="https://github.com/user-attachments/assets/34ade6d6-ef4b-4a92-8fe2-d19dab0e3e2f" />
 
+# Tested on Load balancer (with port forwarding RR Algorithm)
+ Load balancer is listening for requests and forwating operation to a worker (base on the Algorithm RR). After perform the operation and commited to the in-memory database by the appropriate worker, broadcasting the message among other
+workers to sync the database with the update. Then user will served byy other ports as well. Please look the following postman operation 
+
+- GET request to the port 4000 (Primary, Load balancer)
+<img width="974" alt="image" src="https://github.com/user-attachments/assets/b19776ce-85b4-458d-abe0-8ab54da7d35a" />
+
+- POST request to the port 4000
+<img width="1026" alt="image" src="https://github.com/user-attachments/assets/b41f6747-b2fe-4e44-9765-ba0b2b0829e6" />
+
+
+- GET request to the port 4002
+<img width="991" alt="image" src="https://github.com/user-attachments/assets/d0c2e157-3258-43db-8dc8-65267cdba433" />
+
+- DELETE request to the port 4006
+<img width="977" alt="image" src="https://github.com/user-attachments/assets/6b4d8102-4ac3-45c1-ab35-58a0b0c6bbc4" />
+
+- GET request to the port 4004
+<img width="928" alt="image" src="https://github.com/user-attachments/assets/b5bdbe8f-77bc-41ba-83a9-732fded6ed1f" />
 
 
 

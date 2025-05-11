@@ -1,11 +1,11 @@
 import cluster from 'cluster';
 import os from 'os';
 import http, { IncomingMessage, ServerResponse } from 'http';
-import { createServer } from './server'; // Assuming your actual server logic is here
+import { createServer } from './server';
 import { config } from 'dotenv';
-import { User } from '../types/user.types'; // Adjust the import based on your project structure
+import { User } from '../types/user.types';
 import EventEmitter from 'events';
-import { userDb } from '../database/dbuser'; // Assuming this is your database module
+import { userDb } from '../database/dbuser';
 
 config();
 
@@ -26,7 +26,7 @@ let dbState: User[] = [];
 // Choose a load balancing algorithm: 'round-robin', 'ip-hash', 'least-connections'
 const loadBalancingAlgorithm = process.env.LOAD_BALANCING_ALGORITHM || 'round-robin';
 
-let nextWorkerIndexForRoundRobin = 0; // For round-robin
+let nextWorkerIndexForRoundRobin = 0;
 
 // Create and start the cluster
 export const startCluster = (): void => {
