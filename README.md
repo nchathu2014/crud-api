@@ -93,7 +93,7 @@ Available load balancing algorithms:
 - **+10** **GET** `api/users/{userId}` implemented properly ✅
 - **+10** **POST** `api/users` implemented properly ✅
 - **+10** **PUT** `api/users/{userId}` implemented properly ✅
-- **+10** **DELETE** `api/users/{userId}` implemented properly
+- **+10** **DELETE** `api/users/{userId}` implemented properly ✅
 - **+6** Users are stored in the form described in the technical requirements ✅
 - **+6** Value of `port` on which application is running is stored in `.env` file ✅
 
