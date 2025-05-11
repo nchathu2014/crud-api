@@ -1,5 +1,6 @@
 import cluster from 'node:cluster';
 import os from 'node:os';
+import { EventEmitter } from 'node:events';
 import http, { IncomingMessage, ServerResponse } from 'node:http';
 import { createServer } from './server';
 import { config } from 'dotenv';
@@ -78,7 +79,7 @@ export function startCluster(): void {
       delete workerConnections[worker.id];
       
       // Replace the dead worker
-      const deadWorkerPort = Number(worker.process.env.WORKER_PORT);
+      const deadWorkerPort = Number(worker.process.spawnargs.find(arg => arg.startsWith('WORKER_PORT='))?.split('=')[1]);
       console.log(`Restarting worker on port ${deadWorkerPort}...`);
       
       const newWorker = cluster.fork({ WORKER_PORT: deadWorkerPort });
@@ -92,11 +93,19 @@ export function startCluster(): void {
     const workerPort = Number(process.env.WORKER_PORT) || (basePort + 1);
     
     // Set up message handling for DB state sync
-    process.on('message', (message:any) => {
+    
+    const dbSyncEmitter = new EventEmitter();
+
+    process.on('message', (message: any) => {
       if (message.type === 'DB_SYNC') {
         // Notify the worker to update its database
-        process.emit('db-sync', message.data);
+        dbSyncEmitter.emit('db-sync', message.data);
       }
+    });
+
+    dbSyncEmitter.on('db-sync', (data: User[]) => {
+      // Handle the database sync event
+      console.log('Database synchronized:', data);
     });
     
     // Start the server on the assigned port
